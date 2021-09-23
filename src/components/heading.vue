@@ -2,7 +2,11 @@
   import { h as createElement } from 'vue'
 
   function Heading(props, context) {
-    return createElement(`h${props.level}`, context.attrs, context.slots);
+    return createElement(
+      `h${props.level}`,
+      { ...context.attrs, className: 'heading' },
+      context.slots,
+    );
   }
 
   Heading.props = ['level']
