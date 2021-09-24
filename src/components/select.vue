@@ -1,12 +1,12 @@
 <template>
   <div class="select" id="v-model-select-dynamic">
     <select @change="update($event, index)">
-      <option value=""></option>
+      <option value="">-</option>
       <option 
         v-for="option in options"
         :value="option"
         :key="option"
-        :disabled="!!selectionValues.value.includes(option)"
+        :disabled="!!selectionValues.includes(option)"
       >
         {{ option }}
       </option>
